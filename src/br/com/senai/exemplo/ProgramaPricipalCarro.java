@@ -1,4 +1,4 @@
-package br.com.senai;
+package br.com.senai.exemplo;
 
 public class ProgramaPricipalCarro {
 
@@ -36,40 +36,40 @@ public class ProgramaPricipalCarro {
 		carro5.setQtdPortas(2);
 		
 		System.out.println("--- CARRO 1 ---");
-		System.out.println(carro1.getAno());
-		System.out.println(carro1.getMarca());
+		System.out.println("Ano: " + carro1.getAno());
+		System.out.println("Marca: " + carro1.getMarca());
 		System.out.println(carro1.getModelo());
 		System.out.println(carro1.getQtdPortas());
 		System.out.println("-----------------");
 		System.out.println(" ");
 		
 		System.out.println("--- CARRO 2 ---");
-		System.out.println(carro2.getAno());
-		System.out.println(carro2.getMarca());
+		System.out.println("Ano: " + carro2.getAno());
+		System.out.println("Marca: " + carro2.getMarca());
 		System.out.println(carro2.getModelo());
 		System.out.println(carro2.getQtdPortas());
 		System.out.println("-----------------");
 		System.out.println(" ");
 		
 		System.out.println("--- CARRO 3 ---");
-		System.out.println(carro3.getAno());
-		System.out.println(carro3.getMarca());
+		System.out.println("Ano: " + carro3.getAno());
+		System.out.println("Marca: " + carro3.getMarca());
 		System.out.println(carro3.getModelo());
 		System.out.println(carro3.getQtdPortas());
 		System.out.println("-----------------");
 		System.out.println(" ");
 		
 		System.out.println("--- CARRO 4 ---");
-		System.out.println(carro4.getAno());
-		System.out.println(carro4.getMarca());
+		System.out.println("Ano: " + carro4.getAno());
+		System.out.println("Marca: " + carro4.getMarca());
 		System.out.println(carro4.getModelo());
 		System.out.println(carro4.getQtdPortas());
 		System.out.println("-----------------");
 		System.out.println(" ");
 		
 		System.out.println("--- CARRO 5 ---");
-		System.out.println(carro5.getAno());
-		System.out.println(carro5.getMarca());
+		System.out.println("Ano: " + carro5.getAno());
+		System.out.println("Marca: " + carro5.getMarca());
 		System.out.println(carro5.getModelo());
 		System.out.println(carro5.getQtdPortas());
 		System.out.println("-----------------");
