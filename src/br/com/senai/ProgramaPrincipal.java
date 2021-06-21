@@ -14,6 +14,14 @@ public class ProgramaPrincipal {
 
 		List<Pessoa> pessoas = new ArrayList<>();
 		List<Produto> produtos = new ArrayList<Produto>();
+		
+		Produto produto = new Produto(
+				"Abacate",
+				2.5,
+				35,
+				2.5 * 35
+				);
+		produtos.add(produto);
 
 		PessoaController pessoaController = new PessoaController();
 		ProdutoController produtoController = new ProdutoController();
@@ -45,6 +53,18 @@ public class ProgramaPrincipal {
 				produtoController.editarProduto(produtos);
 				break;
 				
+			case 6:
+				produtoController.excluirProduto(produtos);
+				break;
+				
+			case 7:
+				pessoaController.editarPessoa(pessoas);
+				break;
+				
+			case 8:
+				pessoaController.excluirPessoa(pessoas);
+				break;
+				
 			case 9:
 				sair = true;
 				break;
@@ -66,6 +86,9 @@ public class ProgramaPrincipal {
 		System.out.println("3) Cadastrar Produto");
 		System.out.println("4) Listar Produtos");
 		System.out.println("5) Editar produto");
+		System.out.println("6) Excluir produto");
+		System.out.println("7) Editar pessoa");
+		System.out.println("8) Excluir pessoa");
 		System.out.println("9) Sair do Sistema");
 		System.out.println("------------------");
 	}
