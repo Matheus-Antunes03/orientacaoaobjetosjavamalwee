@@ -139,4 +139,14 @@ public class ProdutoController {
 		produtos.remove(idProduto);
 	}
 	
+	public void menu2() {
+		System.out.println("\n------- MENU -------");
+		System.out.println("1) Cadastrar Produto");
+		System.out.println("2) Listar Produtos");
+		System.out.println("3) Editar Produto");
+		System.out.println("4) Excluir Produto");
+		System.out.println("0) Sair do Sistema");
+		System.out.println("--------------------");
+	}
+	
 }

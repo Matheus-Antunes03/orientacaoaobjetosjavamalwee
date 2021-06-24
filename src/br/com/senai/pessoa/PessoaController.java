@@ -3,6 +3,7 @@ package br.com.senai.pessoa;
 import java.util.List;
 import java.util.Scanner;
 
+import br.com.senai.ProgramaPrincipal;
 import br.com.senai.produto.Produto;
 
 public class PessoaController {
@@ -394,5 +395,48 @@ public class PessoaController {
 		
 		pessoas.remove(idPessoa);
 	}
+	
+	public void menu1() {
+		System.out.println("\n----------- MENU ------------");
+		System.out.println("1) Cadastrar Pessoa");
+		System.out.println("2) Listar Pessoas Cadastradas");
+		System.out.println("3) Editar Pessoa");
+		System.out.println("4) Excluir pessoa");
+		System.out.println("0) Sair do Sistema");
+		System.out.println("-----------------------------");
+	}
 
+	public void casePessoas() {
+		boolean sair = false;
+		do {
+			menu1();
+			int opcao = leopcao();
+			switch (opcao) {
+		case 1:
+			pessoas.add(cadastrarPessoa());
+			break;
+			
+		case 2:
+			ListarPessoas();
+			break;
+		
+		case 3:
+			editarPessoa());
+			break;
+			
+		case 4:
+			excluirPessoa();
+			break;
+			
+		case 0:
+			sair = true;
+			break;
+			
+		default:
+			System.out.println("Opção Inválida!");
+			break;
+		} 
+		
+	}while (!sair);
+	}
 }
