@@ -1,5 +1,6 @@
 package br.com.senai.loja;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,19 +15,25 @@ public class VendaController {
 	private ProdutoController produtoController;
 	private PessoaController pessoaController;
 	
+	List<Venda> vendas = new ArrayList<Venda>();
+	
 	public VendaController() {
 		tec = new Scanner(System.in);
 		produtoController = new ProdutoController();
 		pessoaController = new PessoaController();
 	}
 	
-	public int leOpcao() {
-		System.out.println("> ");
+	public int leopcao() {
+		System.out.print("> ");
 		return tec.nextInt();
 	}
 	
 	public List<Venda> listarVenda(List<Venda> vendas) {
 		
+		if(vendas.isEmpty()) {
+			System.out.println("Não possui vendas cadastradas.");
+			return null;
+		}
 		System.out.println("--- VENDAS REALIZADAS ---");
 		
 		System.out.printf("| %10s | %10s | %4s | %6s |\n",
@@ -85,12 +92,35 @@ public class VendaController {
 		return venda;
 	}
 	
-	public void menu3() {
-		System.out.println("\n------ MENU ------");
+	public void menu3(List <Produto> produtos, List <Pessoa> pessoas) {
+		
+		
+		boolean sair = false;
+		do {
+			System.out.println("\n------ MENU ------");
 		System.out.println("1) Cadastrar Venda");
 		System.out.println("2) Listar Vendas");
-		System.out.println("0) Sair do Sistema");
+		System.out.println("0) Voltar");
 		System.out.println("------------------");
+			
+			int opcao = leopcao();
+			switch (opcao) {
+			case 1:
+				vendas.add(cadastrarVenda(produtos, pessoas));
+				break;
+				
+			case 2:
+				listarVenda(vendas);
+				break;
+				
+			case 0:
+				sair = true;
+				break;
+				
+			default:
+				System.out.println("Opção Inválida!");
+				break;
+			}
+		}while (!sair);
 	}
-	
 }

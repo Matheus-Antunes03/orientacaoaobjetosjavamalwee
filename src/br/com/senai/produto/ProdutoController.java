@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import br.com.senai.pessoa.Pessoa;
+import br.com.senai.pessoa.PessoaController;
 
 public class ProdutoController {
 	
@@ -13,6 +14,11 @@ public class ProdutoController {
 		tec = new Scanner(System.in);
 	}
 	
+	public int leopcao() {
+		System.out.print("> ");
+		return tec.nextInt();
+	}
+		
 	public Produto cadastrarProduto() {
 		Produto produto = new Produto();
 		
@@ -139,14 +145,43 @@ public class ProdutoController {
 		produtos.remove(idProduto);
 	}
 	
-	public void menu2() {
-		System.out.println("\n------- MENU -------");
-		System.out.println("1) Cadastrar Produto");
-		System.out.println("2) Listar Produtos");
-		System.out.println("3) Editar Produto");
-		System.out.println("4) Excluir Produto");
-		System.out.println("0) Sair do Sistema");
-		System.out.println("--------------------");
+	public void menu2(List <Produto> produtos) {
+
+		boolean sair = false;
+		do {
+			System.out.println("\n------- MENU -------");
+			System.out.println("1) Cadastrar Produto");
+			System.out.println("2) Listar Produtos");
+			System.out.println("3) Editar Produto");
+			System.out.println("4) Excluir Produto");
+			System.out.println("0) Voltar");
+			System.out.println("--------------------");
+			int opcao = leopcao();
+			switch (opcao) {
+			case 1:
+				produtos.add(cadastrarProduto());
+				 break;
+				 
+			case 2:
+				ListarProdutos(produtos);
+				break;
+				
+			case 3:
+				editarProduto(produtos);
+				break;
+				
+			case 4:
+				excluirProduto(produtos);
+				break;
+				
+			case 0:
+				sair = true;
+				break;
+				
+			default:
+				System.out.println("Opção Inválida!");
+				break;
+			}
+	}while (!sair);
 	}
-	
 }
